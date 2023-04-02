@@ -41,7 +41,7 @@ namespace ProjectForm {
 		}
 	private: System::Windows::Forms::Label^ LbUserInfo;
 	private: System::Windows::Forms::Button^ btexit;
-	private: System::Windows::Forms::Button^ button1;
+
 	protected:
 
 	private:
@@ -60,7 +60,6 @@ namespace ProjectForm {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AdminForm::typeid));
 			this->LbUserInfo = (gcnew System::Windows::Forms::Label());
 			this->btexit = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// LbUserInfo
@@ -86,23 +85,11 @@ namespace ProjectForm {
 			this->btexit->UseVisualStyleBackColor = true;
 			this->btexit->Click += gcnew System::EventHandler(this, &AdminForm::btexit_Click);
 			// 
-			// button1
-			// 
-			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button1->Location = System::Drawing::Point(493, 486);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(140, 52);
-			this->button1->TabIndex = 1;
-			this->button1->Text = L"exit";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &AdminForm::btexit_Click);
-			// 
 			// AdminForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1028, 749);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->btexit);
 			this->Controls->Add(this->LbUserInfo);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
