@@ -1,0 +1,6 @@
+C:\Users\Mr.fox\source\repos\ProjectForm\ProjectForm\x64\Debug\ProjectForm.vcxproj.AssemblyReference.cache
+C:\Users\Mr.fox\source\repos\ProjectForm\ProjectForm\x64\Debug\ProjectForm.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Mr.fox\source\repos\ProjectForm\ProjectForm\x64\Debug\ProjectForm.LoginForm.resources
+C:\Users\Mr.fox\source\repos\ProjectForm\ProjectForm\x64\Debug\ProjectForm.vcxproj.GenerateResource.cache
+C:\Users\Mr.fox\source\repos\ProjectForm\ProjectForm\x64\Debug\ProjectForm.RegisterForm.resources
+C:\Users\Mr.fox\source\repos\ProjectForm\ProjectForm\x64\Debug\ProjectForm.AdminForm.resources
