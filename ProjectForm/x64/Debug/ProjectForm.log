@@ -1,8 +1,1 @@
-﻿  AdminForm.cpp
-  Program.cpp
-C:\Users\Mr.fox\Air-Line-System\ProjectForm\LoginForm.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\Mr.fox\Air-Line-System\ProjectForm\LoginForm.h(234,21): warning C4101: 'e': unreferenced local variable
-C:\Users\Mr.fox\Air-Line-System\ProjectForm\RegisterForm.h(260,20): warning C4101: 'ex': unreferenced local variable
-  Generating Code...
-  AdminForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  ProjectForm.vcxproj -> C:\Users\Mr.fox\Air-Line-System\x64\Debug\ProjectForm.exe
+﻿  ProjectForm.vcxproj -> C:\Users\Mr.fox\Air-Line-System\x64\Debug\ProjectForm.exe
