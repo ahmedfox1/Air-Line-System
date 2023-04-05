@@ -1,5 +1,9 @@
 #pragma once
 #include "User.h";
+#include "Admins.h";
+#include "AdminForm.h"
+#include "UserForm.h"
+
 
 namespace ProjectForm {
 
@@ -10,6 +14,7 @@ namespace ProjectForm {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Data::SqlClient;
+	using namespace System::Threading;
 
 	/// <summary>
 	/// Summary for LoginForm
@@ -179,11 +184,14 @@ namespace ProjectForm {
 
 		}
 #pragma endregion
+		bool z = true;
+
 	private: System::Void btexit_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 
 	}
 		   public: User^ user=nullptr;
+				 public: Admins^ admin = nullptr;
 
 
 	private: System::Void btlogin_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -193,54 +201,115 @@ namespace ProjectForm {
 			MessageBox::Show("Please enter email and password");
 			return;
 		}
-		try {
-			String^ connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=test1;Integrated Security=True";
-			SqlConnection sqlConn(connString);
-			sqlConn.Open();
-
-			String^ sqlQUERY = "SELECT * FROM Users WHERE email=@email AND password=@pwd;";
-			SqlCommand command(sqlQUERY, % sqlConn);
-			command.Parameters->AddWithValue("@email", email);
-			command.Parameters->AddWithValue("@pwd", password);
-
-			SqlDataReader^ reader = command.ExecuteReader();
-			if (reader->Read()) {
-
-				user = gcnew User;
-				user->id =reader->GetInt32(0);
-				user->name = reader->GetString(1);
-				user->email = reader->GetString(2);
-				user->phone = reader->GetString(3);
-				user->address = reader->GetString(4);
-				user->password = reader->GetString(5);
-
-
-
-
-				this->Close();
-
-
-
-			}
-			else {
-				MessageBox::Show("Email or password is incorrect ",
-					"Email or Password Error", MessageBoxButtons::OK);
-
-			
-			}
-
-
-		}
-		catch (Exception^ e) {
-			MessageBox::Show("Try again");
+		
+		bool x = true;
+		bool y = true;
 
 		
-		}
 
+
+			try {
+				String^ connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=test1;Integrated Security=True";
+				SqlConnection sqlConn(connString);
+				sqlConn.Open();
+				String^ sqlQUERY1 = "SELECT * FROM admins WHERE Id=@id AND passworda=@pwd;";
+				SqlCommand command(sqlQUERY1, % sqlConn);
+				command.Parameters->AddWithValue("@id", email);
+				command.Parameters->AddWithValue("@pwd", password);
+				SqlDataReader^ reader1 = command.ExecuteReader();
+			
+
+				if (reader1->Read())
+				{
+					
+					admin = gcnew Admins;
+					admin->namea = reader1->GetString(0);
+					admin->ida = reader1->GetString(1);
+					admin->passworda = reader1->GetString(2);
+					
+					this->Close();
+				
+					ProjectForm::UserForm userform(admin);
+					userform.ShowDialog();
+
+					x = false;
+					
+
+						}
+				else {
+					y = false;
+				}
+				
+				
+
+				
+			}
+			catch (Exception^ e) {
+				MessageBox::Show("trayagain1");
+
+
+
+			}
+			
+		
+			try {
+				String^ connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=test1;Integrated Security=True";
+				SqlConnection sqlConn(connString);
+				sqlConn.Open();
+
+				String^ sqlQUERY = "SELECT * FROM Users WHERE email=@email AND password=@pwd;";
+				SqlCommand command(sqlQUERY, % sqlConn);
+				command.Parameters->AddWithValue("@email", email);
+				command.Parameters->AddWithValue("@pwd", password);
+
+				SqlDataReader^ reader = command.ExecuteReader();
+
+				if (reader->Read()) {
+					
+					if (x =true)
+					{
+					
+
+						user = gcnew User;
+						user->id = reader->GetInt32(0);
+						user->name = reader->GetString(1);
+						user->email = reader->GetString(2);
+						user->phone = reader->GetString(3);
+						user->address = reader->GetString(4);
+						user->password = reader->GetString(5);
+						
+		
+						this->Close();
+
+					}
+					
+
+					
+					
+				}
+				else  {
+				
+					if (x==true&&y==false) {
+						MessageBox::Show("Email or password is incorrect ",
+							"Email or Password Error", MessageBoxButtons::OK);
+					}
+
+				}
+				
+				
+					
+			}
+			catch (Exception^ e) {
+				MessageBox::Show("Try again");
+
+
+			}
+		
+			
 
 	}
 		   public: bool swithtoregister=false;
-
+				
 
 private: System::Void llregister_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->swithtoregister = true;

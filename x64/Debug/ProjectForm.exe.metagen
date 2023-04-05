@@ -1,6 +1,7 @@
   ProjectForm.AdminForm.resources - Embedded, ContainedInManifestFile, 
   ProjectForm.LoginForm.resources - Embedded, ContainedInManifestFile, 
   ProjectForm.RegisterForm.resources - Embedded, ContainedInManifestFile, 
+  ProjectForm.UserForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly ProjectForm, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -28,11 +29,21 @@ Class User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class ProjectForm.AdminForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Admins: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String namea : Public
+    System.String ida : Public
+    System.String passworda : Public
+Class ProjectForm.UserForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Admins): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class ProjectForm.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     User user : Public
+    Admins admin : Public
     Boolean swithtoregister : Public
 Class ProjectForm.RegisterForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

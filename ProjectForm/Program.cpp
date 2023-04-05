@@ -1,6 +1,7 @@
 #include "LoginForm.h"
 #include "AdminForm.h"
 #include "RegisterForm.h"
+#include "UserForm.h"
 using namespace System;
 using namespace System::Windows::Forms;
 
@@ -11,7 +12,7 @@ void main()
 	Application::SetCompatibleTextRenderingDefault(false);
 	
 
-
+	Admins^ admin = nullptr;
 	User^ user = nullptr;
 	while (true)
 	{
@@ -55,6 +56,12 @@ void main()
 		Application::Run(% adminForm);
 
 		
+	}
+	if (admin != nullptr) {
+		ProjectForm::UserForm userform(admin);
+		Application::Run(% userform);
+
+
 	}
 	
 

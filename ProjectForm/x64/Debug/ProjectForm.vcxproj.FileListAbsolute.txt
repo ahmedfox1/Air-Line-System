@@ -10,3 +10,4 @@ C:\Users\Mr.fox\Air-Line-System\ProjectForm\x64\Debug\ProjectForm.AdminForm.reso
 C:\Users\Mr.fox\Air-Line-System\ProjectForm\x64\Debug\ProjectForm.LoginForm.resources
 C:\Users\Mr.fox\Air-Line-System\ProjectForm\x64\Debug\ProjectForm.RegisterForm.resources
 C:\Users\Mr.fox\Air-Line-System\ProjectForm\x64\Debug\ProjectForm.vcxproj.GenerateResource.cache
+C:\Users\Mr.fox\Air-Line-System\ProjectForm\x64\Debug\ProjectForm.UserForm.resources
